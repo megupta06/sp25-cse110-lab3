@@ -1,19 +1,37 @@
 /* General CSS Topics */
+
+/* Comments make the CSS easier to understand */
+
+/* Color */
 body {
   color: rgb(50, 50, 50); /* rgb() */
   background-color: #f4f4f4; /* hex code */
 }
 
+
 h1 {
   color: hsl(210, 70%, 40%); /* hsl() */
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 h2 {
   color: orange; /* Color name */
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+h3 {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.wider-color-example {
+  color: color(display-p3 0.2 0.8 0.5); /* wider-gamut color */
+}
+
+.mixed-color-example {
+  color: color-mix(in srgb, red 60%, yellow); /* color-mix() */
 }
 
 /* CSS Variables & Fallbacks */
@@ -24,6 +42,10 @@ h2 {
 
 body {
   font-size: var(--main-font-size, 14px); /* CSS variable with fallback */
+}
+
+a {
+  color: var(--accent-color);
 }
 
 /* Background */
@@ -46,11 +68,31 @@ section {
 p {
   line-height: 1.6;
   font-size: 16px; /* absolute unit: px */
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-} /* checkpoint1 */
+  margin-top: 0.5em; /* Add some top margin to paragraphs */
+  margin-bottom: 0.5em; /* Add some bottom margin to paragraphs */
+}
+
+hr {
+  height: 3pt; /* absolute unit: pt */
+  background-color: #ccc;
+  margin: 1em 0;
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  width: 500px; /* absolute unit: px */
+}
+
+.absolute-unit-example {
+  width: 2in; /* absolute unit: in */
+  border: 1mm solid black; /* absolute unit: mm */
+  padding: 0.5cm; /* absolute unit: cm */
+}
 
 /* Box Model */
+
+/* Margin - Longhand */
 .agenda-section {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -58,13 +100,19 @@ p {
   margin-right: 15px;
 }
 
+/* Padding - Longhand */
 ul {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30px;
   padding-right: 10px;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.5em; /* Add some top margin to lists */
+  margin-bottom: 0.5em; /* Add some bottom margin to lists */
+}
+
+ol {
+  margin-top: 0.5em; /* Add some top margin to lists */
+  margin-bottom: 0.5em; /* Add some bottom margin to lists */
 }
 
 /* Border - Longhand */
@@ -82,6 +130,11 @@ nav span {
 /* Padding - Shorthand */
 header {
   padding: 1.5em; /* top-bottom right-left */
+}
+
+/* Border - Shorthand */
+img {
+  border: 2px dashed #bbb; /* width style color */
 }
 
 /* Auto margins */
@@ -110,6 +163,21 @@ h1 {
 li strong {
   display: inline-block; /* inline-block */
   color: green;
+
+}
+
+.inline-example {
+  display: inline; /* inline */
+  background-color: lightyellow;
+  padding: 0.2em 0.5em;
+  margin-right: 1em;
+}
+
+.block-example {
+  display: block; /* block */
+  background-color: lightblue;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 /* Sizing */
@@ -127,13 +195,32 @@ footer {
   width: 100%;
   background-color: #eee;
   text-align: center;
-  padding: 0;
+  padding: em;
+}
+
+header {
+  position: relative; /* relative */
+  z-index: 10; /* example of stacking context */
+}
+
+.sticky-note {
+  position: sticky; /* sticky */
+  top: 20px;
+  background-color: lightyellow;
+  border: 1px solid orange;
+  padding: 0em;
+  margin-bottom: 1em;
 }
 
 /* Pseudo-class */
 nav a:hover {
   color: brown; /* :hover */
   text-decoration: none;
+}
+
+button:active {
+  background-color: #0056b3; /* :active */
+  color: white;
 }
 
 /* Layouts - Flexbox */
@@ -158,6 +245,10 @@ nav a:hover {
   grid-auto-rows: min-content; /* grid attribute */
 }
 
+.miscellaneous details {
+  grid-column: 1 / -1; /* grid attribute */
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   /* Styles for tablet or smaller laptop */
@@ -173,6 +264,20 @@ nav a:hover {
   }
 }
 
+@media (max-width: 480px) {
+  /* Styles for very small screens (phone) */
+  header h1 {
+    font-size: 1.5em;
+  }
+  section {
+    padding: 3%;
+  }
+  nav span {
+    display: block;
+    margin: 0.5em 0;
+  }
+}
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -180,21 +285,50 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  font-family: sans-serif; /* Fallback font */
+}
+
 /* 2. CSS Selectors */
+
+/* Class Selector */
 .meeting-topic {
   font-style: italic;
   color: green;
-  display: block; 
+  display: block; /* Make it a block for better spacing */
+}
+
+/* ID Selector */
+#name {
+  border: 1px solid blue;
+  padding: 0.5em;
+  border-radius: 4px;
 }
 
 /* Universal Selector */
+/* Apply a slight box-sizing for easier layout management */
 * {
   box-sizing: border-box;
-  margin: 5px; 
-  padding: 0;
+  margin: 5px; /* Reset default margins */
+  padding: 0; /* Reset default paddings */
+}
+
+/* Apply basic body styles again after the reset */
+body {
+  color: rgb(50, 50, 50);
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--main-font-size, 16px);
+  line-height: 1.6;
 }
 
 /* Element Selector */
+header {
+  /* Styles already defined above */
+}
+
 main {
   padding: 1em;
 }
@@ -202,12 +336,26 @@ main {
 section {
   border-bottom: 1px solid #eee;
   padding-bottom: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 1em; /* Add some top margin to sections */
+  margin-bottom: 1em; /* Add some bottom margin to sections */
+}
+
+section:last-child {
+  border-bottom: none;
 }
 
 p {
   margin-bottom: 1em;
+}
+
+ul,
+ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
 }
 
 a {
@@ -227,6 +375,10 @@ textarea {
   width: 100%;
 }
 
+input[type="radio"] {
+  margin-right: 0.3em;
+}
+
 button[type="submit"] {
   background-color: var(--accent-color);
   color: white;
@@ -239,6 +391,10 @@ button[type="submit"] {
   font-size: var(--main-font-size);
 }
 
+button[type="submit"]:hover {
+  color: darkblue; /* :hover */
+}
+
 /* Pseudo-class Selector */
 details summary {
   cursor: pointer;
@@ -249,7 +405,21 @@ details summary {
   margin-bottom: 0.5em;
 }
 
+details summary::marker {
+  font-size: 0.8em;
+}
+
+/* Selector List */
+h1,
+h2,
+h3,
+strong {
+  font-weight: bold;
+}
+
 /* Combinators */
+
+/* Descendant Combinator */
 main section article p em {
   color: #777;
   font-style: italic;
@@ -259,12 +429,34 @@ main section article p em {
 main > section > h2 {
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.3em;
-  margin-bottom: 0;
+  margin-bottom: 0; /* Remove bottom margin for h2 after section */
+}
+
+/* General sibling combinator */
+h2 ~ p {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 0; /* Remove top margin for paragraphs after h2 */
+}
+
+/* Adjacent sibling combinator */
+h2 + h3 {
+  margin-top: 0; /* Remove top margin for h3 immediately after h2 */
+  color: #777;
+  font-style: italic;
+}
+
+/* Combining Two Selectors */
+li.attendee {
+  font-weight: bold;
+  color: navy;
 }
 
 /* New Selectors (Adopted in December 2023!) */
+
+/* :has() */
 nav:has(a:hover) {
-  background-color: #e0f7fa; 
+  background-color: #e0f7fa; /* Subtle highlight when hovering over a link in nav */
   padding: 0.5em;
   border-radius: 4px;
 }
@@ -278,24 +470,31 @@ main {
       color: var(--accent-color);
       text-decoration: none;
       margin-right: 1em;
+
       i {
         color: #777;
         font-style: italic;
       }
+
       &:hover {
-        text-decoration: underline;
+        i {
+          color: darkred; /* Nested hover style for the italic element */
+        }
       }
     }
   }
+
   .feedback-form {
     fieldset {
       legend {
         font-weight: bold;
         color: #333;
       }
+
       div {
         margin-bottom: 1em;
       }
+
       label {
         display: block;
         margin-bottom: 0.3em;
@@ -311,11 +510,12 @@ footer {
     margin-bottom: 1em;
     border-top: 1px solid #ccc;
   }
+
   p {
     text-align: center;
     color: #777;
     font-size: 0.9em;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0; /* Remove top margin for footer paragraph */
+    margin-bottom: 0; /* Remove bottom margin for footer paragraph */
   }
 }
