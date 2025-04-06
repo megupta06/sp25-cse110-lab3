@@ -83,3 +83,77 @@ nav span {
 header {
   padding: 1.5em; /* top-bottom right-left */
 }
+
+/* Auto margins */
+nav {
+  width: 80%;
+  margin: 1em auto; /* centers the nav horizontally */
+  text-align: center;
+}
+
+/* Border-radius */
+.feedback-form fieldset {
+  border-radius: 10px;
+}
+
+/* Text */
+h1 {
+  text-align: center; /* text-align */
+  text-decoration: underline wavy var(--accent-color); /* text-decoration */
+}
+
+/* Display */
+.hidden {
+  display: none; /* none */
+}
+
+li strong {
+  display: inline-block; /* inline-block */
+  color: green;
+}
+
+/* Sizing */
+.diagram {
+  height: auto;
+  width: 95%;
+  max-width: 700px; /* max-width */
+  min-width: 300px; /* min-width */
+}
+
+/* Position */
+footer {
+  position: fixed; /* fixed */
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  padding: 0;
+}
+
+/* Pseudo-class */
+nav a:hover {
+  color: brown; /* :hover */
+  text-decoration: none;
+}
+
+/* Layouts - Flexbox */
+.attendance ul {
+  display: flex; /* flex */
+  flex-direction: row; /* flexbox attribute */
+  justify-content: flex-start; /* flexbox attribute */
+  align-items: baseline; /* flexbox attribute */
+  gap: 1em; /* flexbox attribute */
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap; /* flexbox attribute */
+}
+
+/* Layouts - Grid */
+.miscellaneous ul {
+  display: grid; /* grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* grid attribute */
+  gap: 1em; /* grid attribute */
+  padding: 0;
+  list-style: none;
+  grid-auto-rows: min-content; /* grid attribute */
+}
