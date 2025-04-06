@@ -157,3 +157,59 @@ nav a:hover {
   list-style: none;
   grid-auto-rows: min-content; /* grid attribute */
 }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Styles for tablet or smaller laptop */
+  header h1 {
+    font-size: 2em;
+  }
+  .attendance ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    width: 95%;
+  }
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 2. CSS Selectors */
+.meeting-topic {
+  font-style: italic;
+  color: green;
+  display: block; /* Make it a block for better spacing */
+}
+
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+  margin: 5px; /* Reset default margins */
+  padding: 0; /* Reset default paddings */
+}
+
+/* Element Selector */
+main {
+  padding: 1em;
+}
+
+section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+}
