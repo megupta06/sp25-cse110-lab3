@@ -184,14 +184,14 @@ body {
 .meeting-topic {
   font-style: italic;
   color: green;
-  display: block; /* Make it a block for better spacing */
+  display: block; 
 }
 
 /* Universal Selector */
 * {
   box-sizing: border-box;
-  margin: 5px; /* Reset default margins */
-  padding: 0; /* Reset default paddings */
+  margin: 5px; 
+  padding: 0;
 }
 
 /* Element Selector */
@@ -264,7 +264,7 @@ main > section > h2 {
 
 /* New Selectors (Adopted in December 2023!) */
 nav:has(a:hover) {
-  background-color: #e0f7fa; /* Subtle highlight when hovering over a link in nav */
+  background-color: #e0f7fa; 
   padding: 0.5em;
   border-radius: 4px;
 }
@@ -302,5 +302,20 @@ main {
         font-weight: bold;
       }
     }
+  }
+}
+
+footer {
+  hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: 1px solid #ccc;
+  }
+  p {
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
