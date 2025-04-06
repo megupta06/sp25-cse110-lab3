@@ -127,7 +127,7 @@ footer {
   width: 100%;
   background-color: #eee;
   text-align: center;
-  padding: em;
+  padding: 0;
 }
 
 /* Pseudo-class */
