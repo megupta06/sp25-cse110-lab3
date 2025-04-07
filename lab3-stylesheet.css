@@ -27,11 +27,13 @@ h3 {
 }
 
 .wider-color-example {
+  color: rgb(51, 204, 128); /* srgb fallback (approximately the same color) */
   color: color(display-p3 0.2 0.8 0.5); /* wider-gamut color */
 }
 
 .mixed-color-example {
-  color: color-mix(in srgb, red 60%, yellow); /* color-mix() */
+   color: orange; /* Simple fallback */
+   color: color-mix(in srgb, red 60%, yellow); /* color-mix() */
 }
 
 /* CSS Variables & Fallbacks */
@@ -195,7 +197,7 @@ footer {
   width: 100%;
   background-color: #eee;
   text-align: center;
-  padding: em;
+  padding: 0;
 }
 
 header {
